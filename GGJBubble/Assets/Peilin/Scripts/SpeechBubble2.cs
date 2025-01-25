@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SpeechBubble2 : MonoBehaviour
 {
     public int damage = 10; // Damage dealt by the speech bubble
     public float speed = 5f; // Speed at which the speech bubble flies
@@ -14,7 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         // Check for the Enter key press
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             // Find the character in the scene
             GameObject character = GameObject.FindWithTag("Character2");
@@ -45,7 +45,7 @@ public class NewBehaviourScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the speech bubble hits the character
-        Character2 character = collision.GetComponent<Character2>();
+        Character character = collision.GetComponent<Character>();
 
         if (character != null)
         {
