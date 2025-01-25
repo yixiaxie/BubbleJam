@@ -6,7 +6,7 @@ using UnityEngine.TextCore.Text;
 public class SpeechBubble2 : MonoBehaviour
 {
     public int damage = 10; // Damage dealt by the speech bubble
-    public float speed = 5f; // Speed at which the speech bubble flies
+    public float speed = 10f; // Speed at which the speech bubble flies
 
     private Transform target; // Reference to the character's transform
     private bool isFlying = false; // Flag to check if the bubble is flying
@@ -14,7 +14,7 @@ public class SpeechBubble2 : MonoBehaviour
     void Update()
     {
         // Check for the Enter key press
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             // Find the character in the scene
             GameObject character = GameObject.FindWithTag("Character2");
@@ -45,7 +45,7 @@ public class SpeechBubble2 : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the speech bubble hits the character
-        Character character = collision.GetComponent<Character>();
+        Character2 character = collision.GetComponent<Character2>();
 
         if (character != null)
         {
