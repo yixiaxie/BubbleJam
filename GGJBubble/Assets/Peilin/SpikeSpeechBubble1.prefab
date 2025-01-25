@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2391091488210820406}
   - component: {fileID: 3616308651794276562}
   - component: {fileID: 4408504593591438462}
-  - component: {fileID: 5382255949563443388}
+  - component: {fileID: -7402370583719676056}
   m_Layer: 0
-  m_Name: SpeechBubble1
+  m_Name: SpikeSpeechBubble1
   m_TagString: SpeechBubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 7959906282979910570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 0.82, z: 0}
-  m_LocalScale: {x: 2.967884, y: 1.5583037, z: 1}
+  m_LocalPosition: {x: 1.0668, y: 0.541, z: 0}
+  m_LocalScale: {x: 2.363623, y: 1.0002751, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.93962264, g: 0.7073763, b: 0.7073763, a: 1}
+  m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
+  m_Color: {r: 0.47776425, g: 0.7132075, b: 0.2462584, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5382255949563443388
+--- !u!114 &-7402370583719676056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,8 +158,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7959906282979910570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8203dbd7e3c40843bd50d46391c8ebe, type: 3}
+  m_Script: {fileID: 11500000, guid: e197bfd4fe243f14e8b49c60dc3747bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  speed: 5
+  damage: 20
+  speed: 10

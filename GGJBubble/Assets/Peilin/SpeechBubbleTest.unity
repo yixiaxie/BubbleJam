@@ -401,6 +401,63 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 76176216}
   m_SourcePrefab: {fileID: 100100000, guid: f9205eaa4a1123c4b9f38c2af83aef19, type: 3}
+--- !u!1001 &227154721
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.431194
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2155418
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959906282979910570, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
+      propertyPath: m_Name
+      value: SpikeSpeechBubble
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7bce416daac3d7747823c3fd0e1a2182, type: 3}
 --- !u!1 &265076281
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +562,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &463092899
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.6136131
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.0456076
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959906282979910570, guid: 1f72895df00d5684191429fd8561296b, type: 3}
+      propertyPath: m_Name
+      value: SpikeSpeechBubble2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f72895df00d5684191429fd8561296b, type: 3}
 --- !u!1 &499293860
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,25 +905,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786165764}
   m_CullTransparentMesh: 1
---- !u!1 &841130609 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7959906282979910570, guid: 9d606cc5af11c2e4a95334697a7c590c, type: 3}
-  m_PrefabInstance: {fileID: 1312135968}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &841130615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841130609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e197bfd4fe243f14e8b49c60dc3747bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  speed: 10
 --- !u!1 &901073831
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,12 +989,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4212715562551831764, guid: 9d606cc5af11c2e4a95334697a7c590c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9760171
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 9d606cc5af11c2e4a95334697a7c590c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9479161
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212715562551831764, guid: 9d606cc5af11c2e4a95334697a7c590c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.483409
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4212715562551831764, guid: 9d606cc5af11c2e4a95334697a7c590c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.29
+      value: 3.25
       objectReference: {fileID: 0}
     - target: {fileID: 4212715562551831764, guid: 9d606cc5af11c2e4a95334697a7c590c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -937,14 +1040,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeechBubble2
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5382255949563443388, guid: 9d606cc5af11c2e4a95334697a7c590c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7959906282979910570, guid: 9d606cc5af11c2e4a95334697a7c590c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 841130615}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d606cc5af11c2e4a95334697a7c590c, type: 3}
 --- !u!1 &1849008272
 GameObject:
@@ -1628,19 +1727,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4212715562551831764, guid: 210c35f7120e3af4b96dcc9a8a75066f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.967884
+      value: 1.9953084
       objectReference: {fileID: 0}
     - target: {fileID: 4212715562551831764, guid: 210c35f7120e3af4b96dcc9a8a75066f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5583037
+      value: 0.9479161
       objectReference: {fileID: 0}
     - target: {fileID: 4212715562551831764, guid: 210c35f7120e3af4b96dcc9a8a75066f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.03
+      value: 3.5437
       objectReference: {fileID: 0}
     - target: {fileID: 4212715562551831764, guid: 210c35f7120e3af4b96dcc9a8a75066f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 3.1948
       objectReference: {fileID: 0}
     - target: {fileID: 4212715562551831764, guid: 210c35f7120e3af4b96dcc9a8a75066f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1674,16 +1773,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5382255949563443388, guid: 210c35f7120e3af4b96dcc9a8a75066f, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7959906282979910570, guid: 210c35f7120e3af4b96dcc9a8a75066f, type: 3}
       propertyPath: m_Name
-      value: SpeechBubble
-      objectReference: {fileID: 0}
-    - target: {fileID: 7959906282979910570, guid: 210c35f7120e3af4b96dcc9a8a75066f, type: 3}
-      propertyPath: m_TagString
       value: SpeechBubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1779,3 +1870,5 @@ SceneRoots:
   - {fileID: 422202472}
   - {fileID: 216101665}
   - {fileID: 1312135968}
+  - {fileID: 463092899}
+  - {fileID: 227154721}
