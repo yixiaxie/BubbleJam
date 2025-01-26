@@ -8,9 +8,11 @@ public class SpeechBubble : MonoBehaviour
     public int damage = 10; // Damage dealt by the speech bubble
     public float speed = 10f; // Speed at which the speech bubble flies
     public KeyCode playerKey = KeyCode.Return;
-    public string playerName = "Character1";
+    public int playerNumber;
+    public string playerName = "Character";
     private Transform target; // Reference to the character's transform
     private bool isFlying = false; // Flag to check if the bubble is flying
+    
 
     void Update()
     {
@@ -19,6 +21,8 @@ public class SpeechBubble : MonoBehaviour
         {
             // Find the character in the scene
             GameObject character = GameObject.FindWithTag(playerName);
+
+           
 
             if (character != null)
             {
@@ -48,8 +52,9 @@ public class SpeechBubble : MonoBehaviour
         // Check if the speech bubble hits the character
         Character character = collision.GetComponent<Character>();
 
-        if (character != null)
+        if (collision.CompareTag(playerName))
         {
+            Debug.Log("HIT");
             // Decrease the character's HP
             character.DecreaseHP(damage);
 

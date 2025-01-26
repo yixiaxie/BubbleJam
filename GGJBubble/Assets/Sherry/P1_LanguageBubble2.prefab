@@ -133,7 +133,7 @@ MonoBehaviour:
   damage: 10
   speed: 10
   playerKey: 32
-  playerName: Character
+  playerName: Character2
 --- !u!61 &2653901964656285630
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -26,11 +26,17 @@ public class ThoughtBubbleManager : MonoBehaviour
     private List<GameObject> player1ThoughtBubbles = new List<GameObject>();
     private List<GameObject> player2ThoughtBubbles = new List<GameObject>();
 
-    public bool isPlayer1SlotFull = false;
-    public bool isPlayer2SlotFull = false;
+    private bool isPlayer1SlotFull = false;
+    private bool isPlayer2SlotFull = false;
+
+    
 
     void Update()
     {
+        isPlayer1SlotFull = player1LanguageSlot.childCount > 0;
+        isPlayer2SlotFull = player2LanguageSlot.childCount > 0;
+
+
         // 玩家1生成想法气泡
         if (Input.GetKeyDown(player1Key))
         {
@@ -113,6 +119,13 @@ public class ThoughtBubbleManager : MonoBehaviour
         // 如果没有足够的气泡，退出
         if (selectedPrefab == null) return;
 
+        // 消耗对应数量的想法气泡
+        for (int i = 0; i < requiredThoughts; i++)
+        {
+            Destroy(thoughtBubbles[0]);
+            thoughtBubbles.RemoveAt(0);
+        }
+
         // 生成语言气泡
         GameObject newBubble = Instantiate(selectedPrefab, languageSlot.position, Quaternion.identity, languageSlot);
 
@@ -125,12 +138,7 @@ public class ThoughtBubbleManager : MonoBehaviour
             bubbleRect.localScale = Vector3.one;
         }
 
-        // 消耗对应数量的想法气泡
-        for (int i = 0; i < requiredThoughts; i++)
-        {
-            Destroy(thoughtBubbles[0]);
-            thoughtBubbles.RemoveAt(0);
-        }
+        
 
         // 设置槽位状态为满
         isSlotFull = true;

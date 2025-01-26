@@ -178,4 +178,4 @@ MonoBehaviour:
   damage: 10
   speed: 10
   playerKey: 13
-  playerName: Character2
+  playerName: Character
