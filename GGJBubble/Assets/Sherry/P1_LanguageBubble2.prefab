@@ -136,8 +136,8 @@ MonoBehaviour:
   playerID: 1
   targetPlayerName: Character2
   isFlying: 0
-  angleOffsetRange: 60
-  garlicToolBehaviour: {fileID: 0}
+  angleOffsetRange: 90
+  garlicDamage: 2
 --- !u!61 &2653901964656285630
 BoxCollider2D:
   m_ObjectHideFlags: 0

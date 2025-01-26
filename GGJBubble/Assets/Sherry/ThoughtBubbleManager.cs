@@ -4,14 +4,14 @@ using UnityEngine;
 public class ThoughtBubbleManager : MonoBehaviour
 {
     [Header("Player 1 Settings")]
-    public KeyCode player1Key = KeyCode.A;
+    //public KeyCode player1Key = KeyCode.A;
     public Transform player1SpawnArea;
     public RectTransform player1LanguageSlot;
     public GameObject player1ThoughtBubblePrefab;
     public GameObject[] player1LanguageBubblePrefabs;
 
     [Header("Player 2 Settings")]
-    public KeyCode player2Key = KeyCode.UpArrow;
+    //public KeyCode player2Key = KeyCode.UpArrow;
     public Transform player2SpawnArea;
     public RectTransform player2LanguageSlot;
     public GameObject player2ThoughtBubblePrefab;
@@ -29,31 +29,59 @@ public class ThoughtBubbleManager : MonoBehaviour
     private bool isPlayer1SlotFull = false;
     private bool isPlayer2SlotFull = false;
     private float slotEmptyDistance = 1.0f;
-
+    public GameManager gameManager;
 
     void Update()
     {
+        if (!gameManager.isGameActive)
+        {
+            return;
+        }
         isPlayer1SlotFull = IsSlotFull(player1LanguageSlot);
         isPlayer2SlotFull = IsSlotFull(player2LanguageSlot);
 
-
-        // 玩家1生成想法气泡
-        if (Input.GetKeyDown(player1Key))
+        if (Input.anyKeyDown)
         {
-            GenerateThoughtBubble(1, player1SpawnArea, player1ThoughtBubbles, player1LanguageSlot, player1LanguageBubblePrefabs);
-            Debug.Log($"Spawned Thought Bubble under parent: {player1SpawnArea}");
+            foreach (KeyCode key in System.Enum.GetValues(typeof(KeyCode)))
+            {
+                if (Input.GetKeyDown(key))
+                {
+                    if (IsLeftSideKey(key)) // 左侧键盘
+                    {
+                        Debug.Log($"Player 1 pressed: {key}");
+                        GenerateThoughtBubble(1, player1SpawnArea, player1ThoughtBubbles, player1LanguageSlot, player1LanguageBubblePrefabs);
+                    }
+                    else if (IsRightSideKey(key)) // 右侧键盘
+                    {
+                        Debug.Log($"Player 2 pressed: {key}");
+                        GenerateThoughtBubble(2, player2SpawnArea, player2ThoughtBubbles, player2LanguageSlot, player2LanguageBubblePrefabs);
+                    }
+                }
+            }
         }
 
-        // 玩家2生成想法气泡
-        if (Input.GetKeyDown(player2Key))
-        {
-            GenerateThoughtBubble(2, player2SpawnArea, player2ThoughtBubbles, player2LanguageSlot, player2LanguageBubblePrefabs);
-            Debug.Log($"Spawned Thought Bubble under parent: {player2SpawnArea}");
-        }
+        
         
 
         CheckAndGenerateLanguageBubble(1, player1ThoughtBubbles, player1LanguageSlot, player1LanguageBubblePrefabs, ref isPlayer1SlotFull);
         CheckAndGenerateLanguageBubble(2, player2ThoughtBubbles, player2LanguageSlot, player2LanguageBubblePrefabs, ref isPlayer2SlotFull);
+    }
+
+    bool IsLeftSideKey(KeyCode key)
+    {
+        return key == KeyCode.Q || key == KeyCode.W || key == KeyCode.E || key == KeyCode.R || key == KeyCode.T ||
+               key == KeyCode.A || key == KeyCode.S || key == KeyCode.D || key == KeyCode.F || key == KeyCode.G ||
+               key == KeyCode.Z || key == KeyCode.X || key == KeyCode.C || key == KeyCode.V || key == KeyCode.B ||
+               key == KeyCode.Alpha1 || key == KeyCode.Alpha2 || key == KeyCode.Alpha3 || key == KeyCode.Alpha4 || key == KeyCode.Alpha5;
+    }
+
+    // 右侧键盘判断（排除回车）
+    bool IsRightSideKey(KeyCode key)
+    {
+        return key == KeyCode.Y || key == KeyCode.U || key == KeyCode.I || key == KeyCode.O || key == KeyCode.P ||
+               key == KeyCode.H || key == KeyCode.J || key == KeyCode.K || key == KeyCode.L || key == KeyCode.Semicolon ||
+               key == KeyCode.N || key == KeyCode.M || key == KeyCode.Comma || key == KeyCode.Period || key == KeyCode.Slash ||
+               key == KeyCode.Alpha6 || key == KeyCode.Alpha7 || key == KeyCode.Alpha8 || key == KeyCode.Alpha9 || key == KeyCode.Alpha0 ;
     }
 
     private bool IsSlotFull(RectTransform languageSlot)
