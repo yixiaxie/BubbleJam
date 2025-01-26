@@ -10,6 +10,8 @@ public class Character : MonoBehaviour
     public TextMeshProUGUI CharacterHP;
     public Slider HPSlider;
     public PKBarController Controller;
+    public GameObject garlicPrefab;  // Assign your garlic prefab in the Inspector
+    public Transform garlicSpawnPoint;
     // Method to decrease HP
     public void DecreaseHP(int damage)
     {
@@ -20,14 +22,21 @@ public class Character : MonoBehaviour
         Controller.UpdateHealthBar();
         // Log the current HP
         Debug.Log("Character HP: " + hp);
-
+        if (hp < 50 && GameObject.FindWithTag("Garlic") == null)
+        {
+            SpawnGarlic();
+        }
         // Check if HP drops to zero or below
         if (hp <= 0)
         {
             Die();
         }
     }
-
+    void SpawnGarlic()
+    {
+        GameObject garlic = Instantiate(garlicPrefab, garlicSpawnPoint.position, Quaternion.identity);
+        garlic.GetComponent<GarlicToolBehaviour>().character = transform;  // Assign the character to the garlic
+    }
     public void Update()
     {
         UpdateHPUI();

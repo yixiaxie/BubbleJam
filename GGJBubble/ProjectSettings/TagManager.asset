@@ -7,6 +7,8 @@ TagManager:
   - Character
   - SpeechBubble
   - Character2
+  - Garlic
+  - Undefined
   layers:
   - Default
   - TransparentFX
