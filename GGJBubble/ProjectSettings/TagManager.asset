@@ -43,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 1752799005
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -51,4 +54,7 @@ TagManager:
     locked: 0
   - name: hover
     uniqueID: 698354701
+    locked: 0
+  - name: frontpeople
+    uniqueID: 32813521
     locked: 0
