@@ -29,10 +29,14 @@ public class ThoughtBubbleManager : MonoBehaviour
     private bool isPlayer1SlotFull = false;
     private bool isPlayer2SlotFull = false;
     private float slotEmptyDistance = 1.0f;
-
+    public GameManager gameManager;
 
     void Update()
     {
+        if (!gameManager.isGameActive)
+        {
+            return;
+        }
         isPlayer1SlotFull = IsSlotFull(player1LanguageSlot);
         isPlayer2SlotFull = IsSlotFull(player2LanguageSlot);
 

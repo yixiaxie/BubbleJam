@@ -717,6 +717,7 @@ MonoBehaviour:
   - {fileID: 9170589747419734590, guid: 43ed478a8c1aed543bcea9b2826ddc71, type: 3}
   languageBubbleRequirements: 01000000050000000a000000
   maxThoughtsPerPlayer: 100
+  gameManager: {fileID: 1290381756}
 --- !u!4 &484482984
 Transform:
   m_ObjectHideFlags: 0
@@ -1510,7 +1511,7 @@ MonoBehaviour:
   speed: 5
   disappearDistance: 0.5
   controller: {fileID: 2012554832}
-  ratio: 0.45
+  ratio: 0.6
   character: {fileID: 854828815}
   Moving: 0
 --- !u!1 &1100328502
@@ -2728,7 +2729,7 @@ MonoBehaviour:
   speed: 5
   disappearDistance: 0.5
   controller: {fileID: 2012554832}
-  ratio: 0.45
+  ratio: 0.6
   character: {fileID: 1433080560648751230}
   Moving: 0
 --- !u!1 &1737013159
