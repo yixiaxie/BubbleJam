@@ -8,14 +8,17 @@ public class GarlicToolBehaviour : MonoBehaviour
     public Transform characterTransform;  // Reference to the character's transform
     public float speed = 5f;     // Speed at which the garlic moves towards the character
     public float disappearDistance = 0.5f;  // Distance at which the garlic disappears
+    public PKBarController controller;
+    public float ratio;
     public Character character;
     public bool Moving = false;
 
     void Update()
     {
+
         if (Moving)
         {
-            if (characterTransform == null) return;
+            //if (characterTransform == null) return;
 
             // Move the garlic towards the character
             transform.position = Vector3.MoveTowards(transform.position, characterTransform.position, speed * Time.deltaTime);
@@ -25,6 +28,17 @@ public class GarlicToolBehaviour : MonoBehaviour
             {
               //  character.ChangeCharacterSprite();
                 Destroy(gameObject);  // Destroy the garlic
+            }
+        }
+        else
+        {
+            if (controller.player1Ratio <= 0.45 && character.playerID==1)
+            {
+                MoveToCharacter();
+            }
+            if (controller.player2Ratio <= 0.45 && character.playerID == 2)
+            {
+                MoveToCharacter();
             }
         }
     }

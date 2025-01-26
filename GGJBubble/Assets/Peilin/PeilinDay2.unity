@@ -588,119 +588,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &394754413
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2603596921922962376, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: character
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2603596921922962376, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: characterTransform
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2744979646809270332, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_Name
-      value: Garlic2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2744979646809270332, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.835
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2603596921922962376, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2744979646809270332, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 394754415}
-  m_SourcePrefab: {fileID: 100100000, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
---- !u!1 &394754414 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2744979646809270332, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
-  m_PrefabInstance: {fileID: 394754413}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &394754415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394754414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1d8c5360684b254eb0bcda46711077f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterTransform: {fileID: 919860916}
-  speed: 5
-  disappearDistance: 0.5
-  controller: {fileID: 2012554832}
-  ratio: 0
-  character: {fileID: 919860913}
-  Moving: 0
 --- !u!1 &484482982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,22 +987,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &919860913 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3791797253103790895, guid: 06269b09ff24757489b891679b46754a, type: 3}
-  m_PrefabInstance: {fileID: 1650983331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5071df8a16817429a39133ed11a7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &919860916 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6137935168115650331, guid: 06269b09ff24757489b891679b46754a, type: 3}
-  m_PrefabInstance: {fileID: 1650983331}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &960906543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,7 +2184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2744979646809270332, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       propertyPath: m_Name
-      value: Garlic1
+      value: Garlic
       objectReference: {fileID: 0}
     - target: {fileID: 2744979646809270332, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       propertyPath: m_IsActive
@@ -2333,11 +2204,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.02
+      value: -3.28
       objectReference: {fileID: 0}
     - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.57
+      value: 3.62
       objectReference: {fileID: 0}
     - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2382,14 +2253,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2744979646809270332, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1670280882}
+      addedObject: {fileID: 1670280879}
   m_SourcePrefab: {fileID: 100100000, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
 --- !u!1 &1670280878 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2744979646809270332, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
   m_PrefabInstance: {fileID: 1670280877}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1670280882
+--- !u!114 &1670280879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2404,8 +2275,6 @@ MonoBehaviour:
   characterTransform: {fileID: 1433080560648751231}
   speed: 5
   disappearDistance: 0.5
-  controller: {fileID: 2012554832}
-  ratio: 0
   character: {fileID: 1433080560648751230}
   Moving: 0
 --- !u!1 &1737013159
@@ -2844,7 +2713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -8.453369, y: 450.402}
+  m_AnchoredPosition: {x: -8.453613, y: 450.402}
   m_SizeDelta: {x: -879.1711, y: -1035.064}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2012554829
@@ -2912,15 +2781,11 @@ MonoBehaviour:
   player1HP: 100
   player2HP: 100
   maxHP: 100
-  garlic1: {fileID: 1670280882}
-  garlic2: {fileID: 394754415}
   player1Bar: {fileID: 1064284813}
   player2Bar: {fileID: 1757564335}
   barParent: {fileID: 2012554828}
   player1HPText: {fileID: 1236868522}
   player2HPText: {fileID: 1944566111}
-  player1Ratio: 0
-  player2Ratio: 0
   gameOver: 0
 --- !u!1 &2130016368
 GameObject:
@@ -3065,4 +2930,3 @@ SceneRoots:
   - {fileID: 1290381757}
   - {fileID: 1657039408}
   - {fileID: 1670280877}
-  - {fileID: 394754413}
