@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -11,8 +11,8 @@ public class SpeechBubble : MonoBehaviour
     public int playerNumber;
     public string playerName = "Character";
     private Transform target; // Reference to the character's transform
-    private bool isFlying = false; // Flag to check if the bubble is flying
-    
+   public bool isFlying = false; // Flag to check if the bubble is flying
+    public float angleOffsetRange = 60f;
 
     void Update()
     {
@@ -38,13 +38,29 @@ public class SpeechBubble : MonoBehaviour
         // If the bubble is flying, move toward the character
         if (isFlying && target != null)
         {
-            // Move the speech bubble toward the target
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            //// Move the speech bubble toward the target
+            //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
-            // Optionally rotate the bubble to face the target (optional)
-            Vector2 direction = target.position - transform.position;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, angle);
+            //// Optionally rotate the bubble to face the target (optional)
+            //Vector2 direction = target.position - transform.position;
+            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            //transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            
+            Vector2 direction = (Vector2)target.position - (Vector2)transform.position;
+
+            // 添加随机角度偏移
+            float randomAngleOffset = Random.Range(-angleOffsetRange, angleOffsetRange);
+            float originalAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float finalAngle = originalAngle + randomAngleOffset;
+
+            // 将角度转为方向向量
+            Vector2 randomDirection = new Vector2(Mathf.Cos(finalAngle * Mathf.Deg2Rad), Mathf.Sin(finalAngle * Mathf.Deg2Rad));
+
+            // 让气泡沿随机方向移动
+            transform.position += (Vector3)(randomDirection.normalized * speed * Time.deltaTime);
+
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

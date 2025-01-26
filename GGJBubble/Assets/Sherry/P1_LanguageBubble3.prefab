@@ -135,6 +135,8 @@ MonoBehaviour:
   playerKey: 32
   playerNumber: 0
   playerName: Character2
+  isFlying: 0
+  angleOffsetRange: 60
 --- !u!61 &-523334219863506428
 BoxCollider2D:
   m_ObjectHideFlags: 0

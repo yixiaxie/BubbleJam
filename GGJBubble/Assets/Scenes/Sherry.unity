@@ -2685,7 +2685,6 @@ GameObject:
   - component: {fileID: 2012554828}
   - component: {fileID: 2012554831}
   - component: {fileID: 2012554830}
-  - component: {fileID: 2012554829}
   - component: {fileID: 2012554832}
   m_Layer: 5
   m_Name: PKBarController
@@ -2716,18 +2715,6 @@ RectTransform:
   m_AnchoredPosition: {x: -8.453613, y: 450.402}
   m_SizeDelta: {x: -879.1711, y: -1035.064}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2012554829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2012554827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef49dc7398f4edd41b5578a674626bd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2012554830
 MonoBehaviour:
   m_ObjectHideFlags: 0
