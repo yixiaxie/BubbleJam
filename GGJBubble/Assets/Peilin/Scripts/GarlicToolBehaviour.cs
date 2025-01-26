@@ -7,18 +7,26 @@ public class GarlicToolBehaviour : MonoBehaviour
     public Transform character;  // Reference to the character's transform
     public float speed = 5f;     // Speed at which the garlic moves towards the character
     public float disappearDistance = 0.5f;  // Distance at which the garlic disappears
+    private bool Moving = false;
 
     void Update()
     {
-        if (character == null) return;
-
-        // Move the garlic towards the character
-        transform.position = Vector3.MoveTowards(transform.position, character.position, speed * Time.deltaTime);
-
-        // Check if the garlic is close enough to the character
-        if (Vector3.Distance(transform.position, character.position) < disappearDistance)
+        if (Moving)
         {
-            Destroy(gameObject);  // Destroy the garlic
+            if (character == null) return;
+
+            // Move the garlic towards the character
+            transform.position = Vector3.MoveTowards(transform.position, character.position, speed * Time.deltaTime);
+
+            // Check if the garlic is close enough to the character
+            if (Vector3.Distance(transform.position, character.position) < disappearDistance)
+            {
+                Destroy(gameObject);  // Destroy the garlic
+            }
         }
+    }
+    public void MoveToCharacter()
+    {
+        Moving = true;
     }
 }
