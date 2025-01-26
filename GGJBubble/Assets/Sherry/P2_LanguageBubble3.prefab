@@ -179,6 +179,8 @@ MonoBehaviour:
   speed: 10
   playerKey: 13
   playerNumber: 0
-  playerName: Character
+  playerID: 2
+  targetPlayerName: Character
   isFlying: 0
   angleOffsetRange: 60
+  garlicToolBehaviour: {fileID: 0}

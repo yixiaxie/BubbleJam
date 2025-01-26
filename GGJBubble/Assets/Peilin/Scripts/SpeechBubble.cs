@@ -8,11 +8,12 @@ public class SpeechBubble : MonoBehaviour
     public int damage = 10; // Damage dealt by the speech bubble
     public float speed = 10f; // Speed at which the speech bubble flies
     public KeyCode playerKey = KeyCode.Return;
-    public int playerNumber;
-    public string playerName = "Character";
+    public int playerID; // 玩家ID (1 或 2)
+    public string targetPlayerName = "Character";
     private Transform target; // Reference to the character's transform
    public bool isFlying = false; // Flag to check if the bubble is flying
     public float angleOffsetRange = 60f;
+    public int garlicDamage = 2;
 
     void Update()
     {
@@ -20,7 +21,7 @@ public class SpeechBubble : MonoBehaviour
         if (Input.GetKeyDown(playerKey))
         {
             // Find the character in the scene
-            GameObject character = GameObject.FindWithTag(playerName);
+            GameObject character = GameObject.FindWithTag(targetPlayerName);
 
            
 
@@ -68,14 +69,23 @@ public class SpeechBubble : MonoBehaviour
         // Check if the speech bubble hits the character
         Character character = collision.GetComponent<Character>();
 
-        if (collision.CompareTag(playerName))
+        if (collision.CompareTag(targetPlayerName))
         {
             Debug.Log("HIT");
-            // Decrease the character's HP
-            character.DecreaseHP(damage);
 
-            // Destroy the speech bubble
+            int finalDamage = damage; // 默认伤害
+
+            if (character.isGarliced)
+            { 
+                finalDamage*= garlicDamage;
+            }
+
+            // 扣除目标玩家 HP
+            character.DecreaseHP(finalDamage);
+
+            // 销毁当前气泡
             Destroy(gameObject);
         }
+
     }
 }

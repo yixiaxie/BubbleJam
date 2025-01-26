@@ -130,13 +130,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8203dbd7e3c40843bd50d46391c8ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 1
   speed: 10
   playerKey: 32
-  playerNumber: 0
-  playerName: Character2
+  playerID: 1
+  targetPlayerName: Character2
   isFlying: 0
   angleOffsetRange: 60
+  garlicDamage: 2
 --- !u!61 &-8099717634817513889
 BoxCollider2D:
   m_ObjectHideFlags: 0

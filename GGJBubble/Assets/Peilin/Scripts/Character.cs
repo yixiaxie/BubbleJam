@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections;
+
 public class Character : MonoBehaviour
 {
     public int hp = 100; // 初始HP
@@ -9,6 +11,32 @@ public class Character : MonoBehaviour
     public PKBarController controller; // 引用PK控制器
     public int playerID; // 玩家ID (1 或 2)
     public string enemyBubbleTag;
+    public bool isGarliced = false;
+    public float garlicDuration = 5f;
+    private bool isGarlicedCoroutineRunning = false;
+
+    void Update()
+    {
+        // 如果 isGarliced 为 true 且协程未运行，启动协程
+        if (isGarliced && !isGarlicedCoroutineRunning)
+        {
+            StartCoroutine(HandleGarlicBuff());
+        }
+    }
+
+    private IEnumerator HandleGarlicBuff()
+    {
+        isGarlicedCoroutineRunning = true; // 标记协程正在运行
+        Debug.Log("Garlic mode activated. Waiting for 5 seconds...");
+
+        // 等待 5 秒
+        yield return new WaitForSeconds(5f);
+
+        // 恢复状态
+        isGarliced = false;
+        isGarlicedCoroutineRunning = false; // 协程结束
+        Debug.Log("Garlic mode deactivated.");
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -68,5 +96,7 @@ public class Character : MonoBehaviour
         Debug.Log($"Player {playerID} has died!");
         Destroy(gameObject); // 删除角色
     }
+
+   
 }
 

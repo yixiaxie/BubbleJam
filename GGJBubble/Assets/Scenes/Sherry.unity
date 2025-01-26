@@ -698,7 +698,7 @@ MonoBehaviour:
   speed: 5
   disappearDistance: 0.5
   controller: {fileID: 2012554832}
-  ratio: 0
+  ratio: 0.45
   character: {fileID: 919860913}
   Moving: 0
 --- !u!1 &484482982
@@ -2405,7 +2405,7 @@ MonoBehaviour:
   speed: 5
   disappearDistance: 0.5
   controller: {fileID: 2012554832}
-  ratio: 0
+  ratio: 0.45
   character: {fileID: 1433080560648751230}
   Moving: 0
 --- !u!1 &1737013159

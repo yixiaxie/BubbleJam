@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +11,8 @@ public class GarlicToolBehaviour : MonoBehaviour
     public PKBarController controller;
     public float ratio;
     public Character character;
+    private Coroutine garlicBuffCoroutine;
+
     public bool Moving = false;
 
     void Update()
@@ -26,17 +28,31 @@ public class GarlicToolBehaviour : MonoBehaviour
             // Check if the garlic is close enough to the character
             if (Vector3.Distance(transform.position, characterTransform.position) < disappearDistance)
             {
-              //  character.ChangeCharacterSprite();
-                Destroy(gameObject);  // Destroy the garlic
+                if (character.playerID == 1)
+                {
+                    GameObject hurtCharacter = GameObject.FindWithTag("Character2");
+                    Character character = hurtCharacter.GetComponent<Character>();
+                    character.isGarliced = true;
+                    Destroy(gameObject);
+                }
+                if (character.playerID == 2)
+                {
+                    GameObject hurtCharacter = GameObject.FindWithTag("Character");
+                    Character character = hurtCharacter.GetComponent<Character>();
+                    character.isGarliced = true;
+                    Destroy(gameObject);
+                }
+                //  character.ChangeCharacterSprite();
+                
             }
         }
         else
         {
-            if (controller.player1Ratio <= 0.45 && character.playerID==1)
+            if (controller.player1Ratio <= ratio && character.playerID==1)
             {
                 MoveToCharacter();
             }
-            if (controller.player2Ratio <= 0.45 && character.playerID == 2)
+            if (controller.player2Ratio <= ratio && character.playerID == 2)
             {
                 MoveToCharacter();
             }
@@ -46,4 +62,6 @@ public class GarlicToolBehaviour : MonoBehaviour
     {
         Moving = true;
     }
+
+    
 }
