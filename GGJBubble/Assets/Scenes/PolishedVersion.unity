@@ -2492,6 +2492,8 @@ MonoBehaviour:
   characterTransform: {fileID: 1433080560648751231}
   speed: 5
   disappearDistance: 0.5
+  controller: {fileID: 2012554832}
+  ratio: 0
   character: {fileID: 1433080560648751230}
   Moving: 0
 --- !u!1 &1737013159
@@ -2985,11 +2987,15 @@ MonoBehaviour:
   player1HP: 100
   player2HP: 100
   maxHP: 100
+  garlic1: {fileID: 0}
+  garlic2: {fileID: 0}
   player1Bar: {fileID: 1064284813}
   player2Bar: {fileID: 1757564335}
   barParent: {fileID: 2012554828}
   player1HPText: {fileID: 1236868522}
   player2HPText: {fileID: 1944566111}
+  player1Ratio: 0
+  player2Ratio: 0
   gameOver: 0
 --- !u!1 &2130016368
 GameObject:
