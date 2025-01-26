@@ -9,12 +9,15 @@ public class Character2 : MonoBehaviour
     public int hp = 100;
     public TextMeshProUGUI CharacterHP;
     public Slider HPSlider;
+    public PKBarController Controller;
     // Method to decrease HP
     public void DecreaseHP(int damage)
     {
         // Reduce HP by the damage amount
         hp -= damage;
-
+        Controller.player1Damage += damage;
+        Controller.totalDamage += damage;
+        Controller.UpdateHealthBar();
         // Log the current HP
         Debug.Log("Character HP: " + hp);
 
