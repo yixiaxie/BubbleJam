@@ -31,6 +31,7 @@ public class PKBarController : MonoBehaviour
     /// <param name="damage">造成的伤害值</param>
     public void DealDamage(int playerID, int damage)
     {
+        CheckGameOver();
         if (gameOver) return;
 
         if (playerID == 1)
@@ -44,7 +45,7 @@ public class PKBarController : MonoBehaviour
 
         UpdateHealthBar();
         UpdateHPText();
-        CheckGameOver();
+        
     }
 
     public void UpdateHealthBar()
