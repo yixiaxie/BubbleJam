@@ -1,60 +1,72 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
 public class Character : MonoBehaviour
 {
-    public int hp = 100;
-    public TextMeshProUGUI CharacterHP;
-    public Slider HPSlider;
-    public PKBarController Controller;
-    // Method to decrease HP
+    public int hp = 100; // 初始HP
+    public TextMeshProUGUI CharacterHP; // 角色血量显示
+    public Slider HPSlider; // 角色血量条
+    public PKBarController controller; // 引用PK控制器
+    public int playerID; // 玩家ID (1 或 2)
+    public string enemyBubbleTag;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(enemyBubbleTag))
+        {
+            // 检查碰撞体是否携带伤害值
+            SpeechBubble speechBubble = collision.GetComponent<SpeechBubble>();
+            if (speechBubble != null)
+            {
+                // 获取伤害值
+                int damage = speechBubble.damage;
+
+                // 调用减血逻辑
+                DecreaseHP(damage);
+            }
+        }
+    }
+
     public void DecreaseHP(int damage)
     {
-        // Reduce HP by the damage amount
+        // 减少角色自身 HP
         hp -= damage;
-        Controller.player2Damage += damage;
-        Controller.totalDamage += damage;
-        Controller.UpdateHealthBar();
-        // Log the current HP
-        Debug.Log("Character HP: " + hp);
 
-        // Check if HP drops to zero or below
+        // 更新 UI
+        UpdateHPUI();
+
+        // 更新 PKBarController 的进度条和文本
+        if (controller != null)
+        {
+            if (playerID == 1)
+                controller.player1HP = hp;
+            else if (playerID == 2)
+                controller.player2HP = hp;
+
+            controller.UpdateHealthBar();
+            controller.UpdateHPText();
+        }
+
+        // 检查是否死亡
         if (hp <= 0)
         {
             Die();
         }
     }
 
-    public void Update()
+    void UpdateHPUI()
     {
-        UpdateHPUI();
-    }
-    // Method called when the character's HP reaches 0
-    private void Die()
-    {
-        Debug.Log("Character has died!");
-        // Add your logic for when the character dies (e.g., destroy object, restart level, etc.)
-        Destroy(gameObject);
-    }
-    private void UpdateHPUI()
-    {
-        // Update Text
         if (CharacterHP != null)
-            CharacterHP.text = "HP: " + hp;
-        else
-        {
-            Debug.LogWarning("HP Text is not assigned!");
-        }
+            CharacterHP.text = $"HP: {hp}";
 
-        // Update Slider
         if (HPSlider != null)
             HPSlider.value = hp;
-        else
-        {
-            Debug.LogWarning("HP slider is not assigned!");
-        }
+    }
+
+    void Die()
+    {
+        Debug.Log($"Player {playerID} has died!");
+        Destroy(gameObject); // 删除角色
     }
 }
+

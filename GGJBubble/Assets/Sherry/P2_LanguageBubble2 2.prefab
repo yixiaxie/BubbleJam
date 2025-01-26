@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -7358693407965441318}
   m_Layer: 0
   m_Name: P2_LanguageBubble2 2
-  m_TagString: SpeechBubble
+  m_TagString: SpeechBubble2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

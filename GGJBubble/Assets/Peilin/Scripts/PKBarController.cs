@@ -1,27 +1,89 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
+using TMPro;
+
 public class PKBarController : MonoBehaviour
 {
-    [SerializeField] private Image healthBarFill;  // Reference to the fill image
-    [SerializeField] private Color fullHealthColor = Color.green;  // Color for full health
-    [SerializeField] private Color lowHealthColor = Color.red;    // Color for low health
-    public float totalDamage=100f;
-    public float player1Damage = 50f;
-    public float player2Damage = 50f;
+    [Header("Player HP")]
+    public int player1HP = 100; // 玩家1初始HP
+    public int player2HP = 100; // 玩家2初始HP
+    public int maxHP = 100;     // 最大HP
+
+    [Header("UI Elements")]
+    public RectTransform player1Bar;      // 玩家1的进度条部分
+    public RectTransform player2Bar;      // 玩家2的进度条部分
+    public RectTransform barParent;       // 总进度条的父级
+    public TextMeshProUGUI player1HPText; // 玩家1的HP文本
+    public TextMeshProUGUI player2HPText; // 玩家2的HP文本
+
+    [Header("Game Settings")]
+    public bool gameOver = false;
+
+    void Start()
+    {
+        UpdateHealthBar();
+        UpdateHPText();
+    }
+
     /// <summary>
-    /// Updates the health bar fill amount and color.
+    /// 对某玩家造成伤害并更新状态
     /// </summary>
-    /// <param name="healthPercentage">Current health percentage (0 to 1).</param>
+    /// <param name="playerID">1 为玩家1，2 为玩家2</param>
+    /// <param name="damage">造成的伤害值</param>
+    public void DealDamage(int playerID, int damage)
+    {
+        if (gameOver) return;
+
+        if (playerID == 1)
+        {
+            player1HP = Mathf.Max(0, player1HP - damage);
+        }
+        else if (playerID == 2)
+        {
+            player2HP = Mathf.Max(0, player2HP - damage);
+        }
+
+        UpdateHealthBar();
+        UpdateHPText();
+        CheckGameOver();
+    }
+
     public void UpdateHealthBar()
     {
-        float healthPercentage=player1Damage/totalDamage;
-        // Clamp the health percentage to ensure it's between 0 and 1
-        healthPercentage = Mathf.Clamp01(healthPercentage);
+        int totalHP = Mathf.Max(1, player1HP + player2HP);
 
-        // Update the fill amount
-        healthBarFill.fillAmount = healthPercentage;
+        float player1Ratio = (float)player1HP / totalHP;
+        float player2Ratio = (float)player2HP / totalHP;
 
+        float barWidth = barParent.rect.width;
+        player1Bar.sizeDelta = new Vector2(barWidth * player1Ratio, player1Bar.sizeDelta.y);
+        player2Bar.sizeDelta = new Vector2(barWidth * player2Ratio, player2Bar.sizeDelta.y);
+    }
+
+    public void UpdateHPText()
+    {
+        if (player1HPText != null)
+            player1HPText.text = $"HP: {player1HP}";
+
+        if (player2HPText != null)
+            player2HPText.text = $"HP: {player2HP}";
+    }
+
+    void CheckGameOver()
+    {
+        if (player1HP <= 0 && player2HP <= 0)
+        {
+            Debug.Log("It's a draw!");
+            gameOver = true;
+        }
+        else if (player1HP <= 0)
+        {
+            Debug.Log("Player 2 Wins!");
+            gameOver = true;
+        }
+        else if (player2HP <= 0)
+        {
+            Debug.Log("Player 1 Wins!");
+            gameOver = true;
+        }
     }
 }
