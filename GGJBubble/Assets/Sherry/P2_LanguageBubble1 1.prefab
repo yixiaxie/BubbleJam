@@ -180,3 +180,5 @@ MonoBehaviour:
   playerKey: 13
   playerNumber: 0
   playerName: Character
+  isFlying: 0
+  angleOffsetRange: 60

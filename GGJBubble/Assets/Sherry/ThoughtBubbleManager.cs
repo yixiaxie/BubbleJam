@@ -28,13 +28,13 @@ public class ThoughtBubbleManager : MonoBehaviour
 
     private bool isPlayer1SlotFull = false;
     private bool isPlayer2SlotFull = false;
+    private float slotEmptyDistance = 1.0f;
 
-    
 
     void Update()
     {
-        isPlayer1SlotFull = player1LanguageSlot.childCount > 0;
-        isPlayer2SlotFull = player2LanguageSlot.childCount > 0;
+        isPlayer1SlotFull = IsSlotFull(player1LanguageSlot);
+        isPlayer2SlotFull = IsSlotFull(player2LanguageSlot);
 
 
         // 玩家1生成想法气泡
@@ -54,6 +54,24 @@ public class ThoughtBubbleManager : MonoBehaviour
 
         CheckAndGenerateLanguageBubble(1, player1ThoughtBubbles, player1LanguageSlot, player1LanguageBubblePrefabs, ref isPlayer1SlotFull);
         CheckAndGenerateLanguageBubble(2, player2ThoughtBubbles, player2LanguageSlot, player2LanguageBubblePrefabs, ref isPlayer2SlotFull);
+    }
+
+    private bool IsSlotFull(RectTransform languageSlot)
+    {
+        // 遍历槽位下的每个子物体
+        foreach (Transform child in languageSlot)
+        {
+            // 计算子物体与槽位的距离
+            float distance = Vector2.Distance(languageSlot.position, child.position);
+
+            // 如果距离小于指定的阈值，认为槽位仍满
+            if (distance < slotEmptyDistance)
+            {
+                return true;
+            }
+        }
+        // 如果没有子物体或所有子物体都超出距离，槽位为空
+        return false;
     }
 
     void GenerateThoughtBubble(
@@ -101,6 +119,9 @@ public class ThoughtBubbleManager : MonoBehaviour
        ref bool isSlotFull)
     {
         GameObject currentLanguageBubble = languageSlot.childCount > 0 ? languageSlot.GetChild(0).gameObject : null;
+        //SpeechBubble bubble = currentLanguageBubble?.GetComponent<SpeechBubble>();
+        //bool isFlying = bubble != null && bubble.isFlying;
+
 
         // 如果槽已满，检测升级
         if (isSlotFull)
@@ -154,6 +175,7 @@ public class ThoughtBubbleManager : MonoBehaviour
 
         Debug.Log($"Player {playerID} generated a Language Bubble.");
     }
+
 
     void CheckAndUpdateLanguageBubble(int playerID,
        List<GameObject> thoughtBubbles,
