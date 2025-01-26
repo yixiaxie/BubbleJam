@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SpeechBubble : MonoBehaviour
 {
     public int damage = 10; // Damage dealt by the speech bubble
     public float speed = 10f; // Speed at which the speech bubble flies
-
+    public KeyCode playerKey = KeyCode.Return;
+    public string playerName = "Character1";
     private Transform target; // Reference to the character's transform
     private bool isFlying = false; // Flag to check if the bubble is flying
 
     void Update()
     {
         // Check for the Enter key press
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(playerKey))
         {
             // Find the character in the scene
-            GameObject character = GameObject.FindWithTag("Character");
+            GameObject character = GameObject.FindWithTag(playerName);
 
             if (character != null)
             {
