@@ -12,6 +12,9 @@ public class Character : MonoBehaviour
     public PKBarController Controller;
     public GarlicToolBehaviour garlic;  
     public Transform garlicSpawnPoint;
+    public Sprite garlicConsumedSprite;
+    public SpriteRenderer characterSpriteRenderer;
+    public Sprite OriginalSprite;
     // Method to decrease HP
     public void DecreaseHP(int damage)
     {
@@ -24,6 +27,7 @@ public class Character : MonoBehaviour
         Debug.Log("Character HP: " + hp);
         if (hp < 50)
         {
+            Debug.Log("garlic is here!");
             garlic.MoveToCharacter();
         }
         // Check if HP drops to zero or below
@@ -35,6 +39,27 @@ public class Character : MonoBehaviour
     public void Update()
     {
         UpdateHPUI();
+    }
+    public void ChangeCharacterSprite()
+    {
+        Debug.Log("Changing to stinky face");
+        StartCoroutine(ChangeSpriteTemporarily());
+    }
+
+    IEnumerator ChangeSpriteTemporarily()
+    {
+        Debug.Log("stinky face");
+        if (characterSpriteRenderer != null && garlicConsumedSprite != null)
+        {
+            // Change to garlic consumed sprite
+            characterSpriteRenderer.sprite = garlicConsumedSprite;
+
+            // Wait for 5 seconds
+            yield return new WaitForSeconds(5f);
+
+            // Revert back to the original sprite
+            characterSpriteRenderer.sprite = OriginalSprite;
+        }
     }
     // Method called when the character's HP reaches 0
     private void Die()
