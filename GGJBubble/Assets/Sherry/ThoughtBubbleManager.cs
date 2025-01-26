@@ -50,6 +50,7 @@ public class ThoughtBubbleManager : MonoBehaviour
             GenerateThoughtBubble(2, player2SpawnArea, player2ThoughtBubbles, player2LanguageSlot, player2LanguageBubblePrefabs);
             Debug.Log($"Spawned Thought Bubble under parent: {player2SpawnArea}");
         }
+        
 
         CheckAndGenerateLanguageBubble(1, player1ThoughtBubbles, player1LanguageSlot, player1LanguageBubblePrefabs, ref isPlayer1SlotFull);
         CheckAndGenerateLanguageBubble(2, player2ThoughtBubbles, player2LanguageSlot, player2LanguageBubblePrefabs, ref isPlayer2SlotFull);
@@ -90,6 +91,7 @@ public class ThoughtBubbleManager : MonoBehaviour
         //TryUpdateLanguageBubble(thoughtBubbles, languageSlot, languageBubblePrefabs);
     }
 
+   
 
     void CheckAndGenerateLanguageBubble(
        int playerID,
@@ -98,8 +100,15 @@ public class ThoughtBubbleManager : MonoBehaviour
        GameObject[] languageBubblePrefabs,
        ref bool isSlotFull)
     {
-        // 如果槽已满，不生成新的语言气泡
-        if (isSlotFull) return;
+        GameObject currentLanguageBubble = languageSlot.childCount > 0 ? languageSlot.GetChild(0).gameObject : null;
+
+        // 如果槽已满，检测升级
+        if (isSlotFull)
+        {
+            CheckAndUpdateLanguageBubble(playerID, thoughtBubbles, languageSlot, languageBubblePrefabs);
+            return;
+        }
+       
 
         // 检查是否有足够的想法气泡
         int thoughtCount = thoughtBubbles.Count;
@@ -146,7 +155,78 @@ public class ThoughtBubbleManager : MonoBehaviour
         Debug.Log($"Player {playerID} generated a Language Bubble.");
     }
 
+    void CheckAndUpdateLanguageBubble(int playerID,
+       List<GameObject> thoughtBubbles,
+       RectTransform languageSlot,
+       GameObject[] languageBubblePrefabs)
+    {
+        GameObject currentLanguageBubble = languageSlot.childCount > 0 ? languageSlot.GetChild(0).gameObject : null;
+        int currentLevel = -1;
 
+        // 获取当前槽内语言气泡的等级
+        if (currentLanguageBubble != null)
+        {
+            for (int i = 0; i < languageBubblePrefabs.Length; i++)
+            {
+                if (currentLanguageBubble.name.Contains(languageBubblePrefabs[i].name))
+                {
+                    currentLevel = i;
+                    break;
+                }
+            }
+        }
+
+        // 检查是否有更高级别的 Bubble
+        int thoughtCount = thoughtBubbles.Count;
+        GameObject selectedPrefab = null;
+        int requiredThoughts = 0;
+
+        for (int i = languageBubbleRequirements.Length - 1; i > currentLevel; i--)
+        {
+            if (thoughtCount >= languageBubbleRequirements[i])
+            {
+                selectedPrefab = languageBubblePrefabs[i];
+                requiredThoughts = languageBubbleRequirements[i];
+                break;
+            }
+        }
+
+        // 如果没有更高级别，退出
+        if (selectedPrefab == null) return;
+
+        // 替换语言气泡内容
+        if (currentLanguageBubble != null)
+        {
+            Debug.Log($"Player {playerID} upgrades Language Bubble from Level {currentLevel + 1} to Level {requiredThoughts}");
+            Destroy(currentLanguageBubble);
+            // 生成语言气泡
+            GameObject newBubble = Instantiate(selectedPrefab, languageSlot.position, Quaternion.identity, languageSlot);
+
+            // 自动适配槽位大小
+            RectTransform bubbleRect = newBubble.GetComponent<RectTransform>();
+            if (bubbleRect != null)
+            {
+                bubbleRect.anchoredPosition = Vector2.zero;
+                bubbleRect.sizeDelta = languageSlot.sizeDelta * 0.8f;
+                bubbleRect.localScale = Vector3.one;
+            }
+
+
+    
+        }
+
+        // 消耗差值的想法气泡
+        int difference = requiredThoughts - languageBubbleRequirements[currentLevel];
+        for (int i = 0; i < difference; i++)
+        {
+            if (thoughtBubbles.Count > 0)
+            {
+                Destroy(thoughtBubbles[0]);
+                thoughtBubbles.RemoveAt(0);
+            }
+        }
+
+    }
     
     public void OnLanguageBubbleFired(int playerID)
     {
