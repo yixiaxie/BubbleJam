@@ -7,8 +7,8 @@ public class PKBarController : MonoBehaviour
     public int player1HP = 100; // 玩家1初始HP
     public int player2HP = 100; // 玩家2初始HP
     public int maxHP = 100;     // 最大HP
-    public GarlicToolBehaviour garlic1;
-    public GarlicToolBehaviour garlic2;
+    //public GarlicToolBehaviour garlic1;
+    //public GarlicToolBehaviour garlic2;
 
     [Header("UI Elements")]
     public RectTransform player1Bar;      // 玩家1的进度条部分
@@ -18,8 +18,12 @@ public class PKBarController : MonoBehaviour
     public TextMeshProUGUI player2HPText; // 玩家2的HP文本
     public float player1Ratio;
     public float player2Ratio;
+    public RectTransform playerIcon;
+
     [Header("Game Settings")]
     public bool gameOver = false;
+
+
     void Start()
     {
         UpdateHealthBar();
@@ -61,6 +65,12 @@ public class PKBarController : MonoBehaviour
         float barWidth = barParent.rect.width;
         player1Bar.sizeDelta = new Vector2(barWidth * player1Ratio, player1Bar.sizeDelta.y);
         player2Bar.sizeDelta = new Vector2(barWidth * player2Ratio, player2Bar.sizeDelta.y);
+
+        // 获取 player1Bar 的右边界
+        Vector3 player1BarRight = player1Bar.position + new Vector3(player1Bar.rect.width * player1Bar.lossyScale.x, 0, 0);
+
+        // 将 PlayerIcon 放置到右边界位置
+        playerIcon.position = player1BarRight;
     }
 
     public void UpdateHPText()
