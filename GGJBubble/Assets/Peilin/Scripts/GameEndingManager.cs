@@ -5,7 +5,7 @@ using TMPro;
 
 public class GameEndingManager : MonoBehaviour
 {
-    public TextMeshProUGUI winnerText; // Assign a UI Text element in the Inspector
+
     public Button restartButton; // Assign a UI Button element in the Inspector
     public Button exitButton; // Assign a UI Button element in the Inspector
 
@@ -25,18 +25,7 @@ public class GameEndingManager : MonoBehaviour
 
     void DisplayWinner()
     {
-        if (player1Score > player2Score)
-        {
-            winnerText.text = "Player 1 Wins!";
-        }
-        else if (player2Score > player1Score)
-        {
-            winnerText.text = "Player 2 Wins!";
-        }
-        else
-        {
-            winnerText.text = "It's a Tie!"; // Optional if scores are equal
-        }
+     
     }
 
     void RestartGame()
@@ -46,7 +35,6 @@ public class GameEndingManager : MonoBehaviour
 
     void ExitGame()
     {
-        Application.Quit();
-        Debug.Log("Game Exited"); // For testing in the Unity Editor
+        SceneManager.LoadScene("Credit 1");
     }
 }

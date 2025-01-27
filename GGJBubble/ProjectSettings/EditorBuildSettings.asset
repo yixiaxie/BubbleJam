@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Peilin/Ending Even.unity
     guid: 0401a636df4a6ac448ad6c1c77d05451
+  - enabled: 1
+    path: Assets/Scenes/Credit 1.unity
+    guid: d287ed20f6e2b0f418a4bb8cc29387ea
+  - enabled: 1
+    path: Assets/Scenes/Credit 2.unity
+    guid: 9ea747e908770d248943bb24b1dc0ce1
   m_configObjects: {}
