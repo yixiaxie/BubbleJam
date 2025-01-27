@@ -15,7 +15,10 @@ public class Character : MonoBehaviour
     public float garlicDuration = 5f;
     private bool isGarlicedCoroutineRunning = false;
 
+
     public GameObject garlic;
+
+
 
     void Update()
     {
@@ -107,11 +110,15 @@ public class Character : MonoBehaviour
         Debug.Log($"Player {playerID} has died!");
 
 
+
         isDied = true;
 
         hp = 0;
        
 
+
+
+        Destroy(gameObject); // 删除角色
 
     }
 
