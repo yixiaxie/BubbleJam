@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OpeningScene : MonoBehaviour
+public class OpeningScene2 : MonoBehaviour
 {
     public string nextSceneName = "Control"; // 下一个场景的名称
 
