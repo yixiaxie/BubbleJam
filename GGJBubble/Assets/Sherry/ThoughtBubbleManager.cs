@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ThoughtBubbleManager : MonoBehaviour
 {
+    public AudioSource audioSource; // Reference to AudioSource
+    public AudioClip audioClip;
     [Header("Player 1 Settings")]
     //public KeyCode player1Key = KeyCode.A;
     public Transform player1SpawnArea;
@@ -31,6 +33,19 @@ public class ThoughtBubbleManager : MonoBehaviour
     private float slotEmptyDistance = 1.0f;
     public GameManager gameManager;
 
+    private void Start()
+    {
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+
+        // Optionally assign the audioClip to the AudioSource
+        if (audioSource != null && audioClip != null)
+        {
+            audioSource.clip = audioClip;
+        }
+    }
     void Update()
     {
         if (!gameManager.isGameActive)
@@ -50,11 +65,13 @@ public class ThoughtBubbleManager : MonoBehaviour
                     {
                         Debug.Log($"Player 1 pressed: {key}");
                         GenerateThoughtBubble(1, player1SpawnArea, player1ThoughtBubbles, player1LanguageSlot, player1LanguageBubblePrefabs);
+                        audioSource.Play();
                     }
                     else if (IsRightSideKey(key)) // 右侧键盘
                     {
                         Debug.Log($"Player 2 pressed: {key}");
                         GenerateThoughtBubble(2, player2SpawnArea, player2ThoughtBubbles, player2LanguageSlot, player2LanguageBubblePrefabs);
+                        audioSource.Play();
                     }
                 }
             }
