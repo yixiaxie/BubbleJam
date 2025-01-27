@@ -107,8 +107,18 @@ public class Character : MonoBehaviour
         Debug.Log($"Player {playerID} has died!");
         isDied = true;
         hp = 0;
+        if (controller != null)
+        {
+            if (playerID == 1)
+                controller.player1HP = hp;
+            else if (playerID == 2)
+                controller.player2HP = hp;
+
+            controller.UpdateHealthBar();
+            controller.UpdateHPText();
+        }
         //Destroy(gameObject); // 删除角色
-        
+
     }
 
    

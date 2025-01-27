@@ -179,6 +179,7 @@ MonoBehaviour:
   speed: 10
   playerKey: 13
   playerID: 2
+  playerName: Character2
   targetPlayerName: Character
   isFlying: 0
   angleOffsetRange: 90

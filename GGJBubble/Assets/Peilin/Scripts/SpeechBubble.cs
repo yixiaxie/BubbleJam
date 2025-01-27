@@ -9,21 +9,36 @@ public class SpeechBubble : MonoBehaviour
     public float speed = 10f; // Speed at which the speech bubble flies
     public KeyCode playerKey = KeyCode.Return;
     public int playerID; // 玩家ID (1 或 2)
+    public string playerName = "Character";
     public string targetPlayerName = "Character";
     private Transform target; // Reference to the character's transform
    public bool isFlying = false; // Flag to check if the bubble is flying
     public float angleOffsetRange = 60f;
     public int garlicDamage = 2;
+    
 
     void Update()
     {
         // Check for the Enter key press
         if (Input.GetKeyDown(playerKey))
         {
-            // Find the character in the scene
-            GameObject character = GameObject.FindWithTag(targetPlayerName);
+            
+                // 找到带有特定标签的物体
+                GameObject player = GameObject.FindWithTag(playerName);
 
-           
+                if (player != null)
+                {
+                    // 获取 SpriteRenderer 组件
+                    SpriteController spriteController = player.GetComponent<SpriteController>();
+
+                spriteController.isAttacking = true;
+
+                }
+
+
+                // Find the character in the scene
+                GameObject character = GameObject.FindWithTag(targetPlayerName);
+
 
             if (character != null)
             {
@@ -64,9 +79,15 @@ public class SpeechBubble : MonoBehaviour
     {
         // Check if the speech bubble hits the character
         Character character = collision.GetComponent<Character>();
+        SpriteController spriteController = collision.GetComponent<SpriteController>();
 
+        
         if (collision.CompareTag(targetPlayerName))
         {
+           
+            
+
+            spriteController.isHurt = true;
             Debug.Log("HIT");
 
             int finalDamage = damage; // 默认伤害
