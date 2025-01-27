@@ -14,17 +14,9 @@ public class Character : MonoBehaviour
     public bool isGarliced = false;
     public float garlicDuration = 5f;
     private bool isGarlicedCoroutineRunning = false;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     public bool isDied = false;
-=======
+
     public GameObject garlic;
->>>>>>> main
-=======
->>>>>>> parent of 6cf9306 (endscene)
-=======
->>>>>>> parent of 6cf9306 (endscene)
 
     void Update()
     {
@@ -114,22 +106,11 @@ public class Character : MonoBehaviour
     void Die()
     {
         Debug.Log($"Player {playerID} has died!");
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        //Destroy(gameObject); // 删除角色
+
         isDied = true;
-=======
+
         hp = 0;
-        Destroy(gameObject); // 删除角色
-        
->>>>>>> main
-=======
-        Destroy(gameObject); // 删除角色
->>>>>>> parent of 6cf9306 (endscene)
-=======
-        Destroy(gameObject); // 删除角色
->>>>>>> parent of 6cf9306 (endscene)
+       
     }
 
    
