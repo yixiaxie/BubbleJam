@@ -461,6 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f1a7b45b3abae24ca8117a5d55ea77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneName: Credit 2
 --- !u!4 &506222388
 Transform:
   m_ObjectHideFlags: 0
@@ -1110,7 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e58587d10cced14ba7995caf2f8cc5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: PolishedVersion
+  nextSceneName: Credit 2
 --- !u!4 &1952626235
 Transform:
   m_ObjectHideFlags: 0

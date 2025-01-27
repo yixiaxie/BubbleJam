@@ -35,7 +35,6 @@ public class GameEndingManager : MonoBehaviour
 
     void ExitGame()
     {
-        Application.Quit();
-        Debug.Log("Game Exited"); // For testing in the Unity Editor
+        SceneManager.LoadScene("Credit 1");
     }
 }

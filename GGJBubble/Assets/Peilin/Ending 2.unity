@@ -833,7 +833,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf591b75844c5c4697b5226e6d0f024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winnerText: {fileID: 435778476}
   restartButton: {fileID: 708842808}
   exitButton: {fileID: 1363676335}
 --- !u!1 &708842806
@@ -1241,7 +1240,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7dac388152736524da4889c6c2e63890, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 561d495c36a3ebd418c1beda5b30343f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.88235295}
   m_FlipX: 0
   m_FlipY: 0
