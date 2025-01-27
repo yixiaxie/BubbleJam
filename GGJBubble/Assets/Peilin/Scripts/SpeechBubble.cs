@@ -39,15 +39,7 @@ public class SpeechBubble : MonoBehaviour
         // If the bubble is flying, move toward the character
         if (isFlying && target != null)
         {
-            //// Move the speech bubble toward the target
-            //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-
-            //// Optionally rotate the bubble to face the target (optional)
-            //Vector2 direction = target.position - transform.position;
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            //transform.rotation = Quaternion.Euler(0, 0, angle);
-
-            
+            // 计算气泡移动的基本方向
             Vector2 direction = (Vector2)target.position - (Vector2)transform.position;
 
             // 添加随机角度偏移
@@ -58,11 +50,15 @@ public class SpeechBubble : MonoBehaviour
             // 将角度转为方向向量
             Vector2 randomDirection = new Vector2(Mathf.Cos(finalAngle * Mathf.Deg2Rad), Mathf.Sin(finalAngle * Mathf.Deg2Rad));
 
-            // 让气泡沿随机方向移动
-            transform.position += (Vector3)(randomDirection.normalized * speed * Time.deltaTime);
+            // 计算上下起伏偏移（正弦波）
+            float waveOffset = Mathf.Sin(Time.time * speed) * 0.03f; // 振幅为0.5，可调整
+            Vector3 waveMotion = new Vector3(0, waveOffset, 0);
 
-            
+            // 最终方向叠加上下波动
+            transform.position += (Vector3)(randomDirection.normalized * speed * Time.deltaTime) + waveMotion;
         }
+
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
