@@ -46,6 +46,12 @@ TagManager:
   - name: background
     uniqueID: 1752799005
     locked: 0
+  - name: speechbubble1
+    uniqueID: 1335935261
+    locked: 0
+  - name: speechbubble2
+    uniqueID: 1587195867
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

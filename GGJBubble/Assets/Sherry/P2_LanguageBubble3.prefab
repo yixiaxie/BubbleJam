@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 991708555985276422}
   - component: {fileID: 7607492476830921288}
+  - component: {fileID: 7573727712106442682}
   m_Layer: 0
   m_Name: Isometric Diamond
   m_TagString: Untagged
@@ -84,6 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7573727712106442682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262463814443517206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10af8701caf48804c8b6894e6984e3f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingLayer1: speechbubble1
+  sortingLayer2: speechbubble2
 --- !u!1 &9170589747419734590
 GameObject:
   m_ObjectHideFlags: 0

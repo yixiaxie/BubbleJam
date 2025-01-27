@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 991708555985276422}
   - component: {fileID: 7607492476830921288}
+  - component: {fileID: 2975740621253659394}
   m_Layer: 0
   m_Name: Isometric Diamond
   m_TagString: Untagged
@@ -84,6 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2975740621253659394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4262463814443517206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10af8701caf48804c8b6894e6984e3f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sortingLayer1: speechbubble1
+  sortingLayer2: speechbubble2
 --- !u!1 &9170589747419734590
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,13 +149,11 @@ MonoBehaviour:
   speed: 10
   playerKey: 32
   playerID: 1
-  PlayerName: Character
+  playerName: Character
   targetPlayerName: Character2
   isFlying: 0
   angleOffsetRange: 90
   garlicDamage: 2
-  attackSprite: {fileID: 21300000, guid: 023cb639f6c29bd4785cd619b47019b7, type: 3}
-  hurtSprite: {fileID: 21300000, guid: 561d495c36a3ebd418c1beda5b30343f, type: 3}
 --- !u!61 &-523334219863506428
 BoxCollider2D:
   m_ObjectHideFlags: 0
