@@ -14,15 +14,28 @@ public class Character : MonoBehaviour
     public bool isGarliced = false;
     public float garlicDuration = 5f;
     private bool isGarlicedCoroutineRunning = false;
+<<<<<<< HEAD
     public bool isDied = false;
+=======
+    public GameObject garlic;
+>>>>>>> main
 
     void Update()
     {
+        if (isGarliced)
+        {
+            garlic.SetActive(true);
+        }
+        else
+        {
+            garlic.SetActive(false);
+        }
         // 如果 isGarliced 为 true 且协程未运行，启动协程
         if (isGarliced && !isGarlicedCoroutineRunning)
         {
             StartCoroutine(HandleGarlicBuff());
         }
+
     }
 
     private IEnumerator HandleGarlicBuff()
@@ -95,8 +108,14 @@ public class Character : MonoBehaviour
     void Die()
     {
         Debug.Log($"Player {playerID} has died!");
+<<<<<<< HEAD
         //Destroy(gameObject); // 删除角色
         isDied = true;
+=======
+        hp = 0;
+        Destroy(gameObject); // 删除角色
+        
+>>>>>>> main
     }
 
    
