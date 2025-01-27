@@ -16,10 +16,13 @@ public class Character : MonoBehaviour
     private bool isGarlicedCoroutineRunning = false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public bool isDied = false;
 =======
     public GameObject garlic;
 >>>>>>> main
+=======
+>>>>>>> parent of 6cf9306 (endscene)
 =======
 >>>>>>> parent of 6cf9306 (endscene)
 
@@ -113,6 +116,7 @@ public class Character : MonoBehaviour
         Debug.Log($"Player {playerID} has died!");
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         //Destroy(gameObject); // 删除角色
         isDied = true;
 =======
@@ -120,6 +124,9 @@ public class Character : MonoBehaviour
         Destroy(gameObject); // 删除角色
         
 >>>>>>> main
+=======
+        Destroy(gameObject); // 删除角色
+>>>>>>> parent of 6cf9306 (endscene)
 =======
         Destroy(gameObject); // 删除角色
 >>>>>>> parent of 6cf9306 (endscene)
