@@ -41,7 +41,7 @@ public class Character : MonoBehaviour
         Debug.Log("Garlic mode activated. Waiting for 5 seconds...");
 
         // 等待 5 秒
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         // 恢复状态
         isGarliced = false;

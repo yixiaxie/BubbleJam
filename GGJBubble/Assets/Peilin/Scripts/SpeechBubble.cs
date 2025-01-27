@@ -94,7 +94,7 @@ public class SpeechBubble : MonoBehaviour
 
             if (character.isGarliced)
             { 
-                finalDamage*= garlicDamage;
+                finalDamage += garlicDamage;
             }
 
             // 扣除目标玩家 HP

@@ -198,4 +198,4 @@ MonoBehaviour:
   targetPlayerName: Character
   isFlying: 0
   angleOffsetRange: 90
-  garlicDamage: 2
+  garlicDamage: 3

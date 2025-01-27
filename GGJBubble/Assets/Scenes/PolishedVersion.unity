@@ -1744,7 +1744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   speed: 5
   disappearDistance: 0.5
   controller: {fileID: 2012554832}
-  ratio: 0.45
+  ratio: 0.4
   character: {fileID: 854828815}
   Moving: 0
 --- !u!1 &1100328502
@@ -2971,6 +2971,10 @@ PrefabInstance:
       value: -1.3028687
       objectReference: {fileID: 0}
     - target: {fileID: 3791797253103790895, guid: 06269b09ff24757489b891679b46754a, type: 3}
+      propertyPath: hp
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3791797253103790895, guid: 06269b09ff24757489b891679b46754a, type: 3}
       propertyPath: garlic
       value: 
       objectReference: {fileID: 1141194677}
@@ -3169,7 +3173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.28
+      value: -3.68
       objectReference: {fileID: 0}
     - target: {fileID: 5663051890608815713, guid: 449c7193793fd914ea7e785b01cea089, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3241,7 +3245,7 @@ MonoBehaviour:
   speed: 5
   disappearDistance: 0.5
   controller: {fileID: 2012554832}
-  ratio: 0.45
+  ratio: 0.4
   character: {fileID: 1433080560648751230}
   Moving: 0
 --- !u!1 &1737013159
@@ -3901,9 +3905,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e024f0e50c2844a9c0d2cc73ea30e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1HP: 100
-  player2HP: 100
-  maxHP: 100
+  player1HP: 250
+  player2HP: 250
+  maxHP: 250
   player1Bar: {fileID: 1064284813}
   player2Bar: {fileID: 1757564335}
   barParent: {fileID: 2012554828}
@@ -4126,6 +4130,10 @@ PrefabInstance:
     - target: {fileID: 8203506992407283326, guid: dbaac3ea2971ac841bfe133d587bf328, type: 3}
       propertyPath: m_Offset.y
       value: -1.3162202
+      objectReference: {fileID: 0}
+    - target: {fileID: 8477882833020300675, guid: dbaac3ea2971ac841bfe133d587bf328, type: 3}
+      propertyPath: hp
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8477882833020300675, guid: dbaac3ea2971ac841bfe133d587bf328, type: 3}
       propertyPath: garlic

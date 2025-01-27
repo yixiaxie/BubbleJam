@@ -153,7 +153,7 @@ MonoBehaviour:
   targetPlayerName: Character2
   isFlying: 0
   angleOffsetRange: 90
-  garlicDamage: 2
+  garlicDamage: 3
 --- !u!61 &-8099717634817513889
 BoxCollider2D:
   m_ObjectHideFlags: 0
