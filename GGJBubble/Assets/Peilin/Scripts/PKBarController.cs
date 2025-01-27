@@ -26,6 +26,7 @@ public class PKBarController : MonoBehaviour
         UpdateHPText();
     }
 
+
     /// <summary>
     /// 对某玩家造成伤害并更新状态
     /// </summary>
