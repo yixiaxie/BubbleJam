@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public bool isGameActive = false;
     private float countdownTime = 60f;  // Countdown timer
-
+    public bool isGameEnd = false;
     public TextMeshProUGUI timerText;  // Reference to the TextMeshProUGUI element
 
     void Awake()
@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
         {
             timerText.text = "Time's up!";  // Display message when time is up
         }
+        isGameEnd = true;
 
     }
 

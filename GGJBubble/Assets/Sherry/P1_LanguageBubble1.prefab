@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.8142, y: -6.6107, z: 0}
-  m_LocalScale: {x: 0.2074, y: 0.2074, z: 0.2074}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8072929425499224611}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a01c8cf43745e5c418db55d77baf3ab4, type: 3}
-  m_Color: {r: 1, g: 0.5844065, b: 0.56289303, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c0aae3d90ca58c74fba6312e04442733, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,10 +134,13 @@ MonoBehaviour:
   speed: 10
   playerKey: 32
   playerID: 1
+  PlayerName: Character
   targetPlayerName: Character2
   isFlying: 0
   angleOffsetRange: 90
   garlicDamage: 2
+  attackSprite: {fileID: 21300000, guid: 023cb639f6c29bd4785cd619b47019b7, type: 3}
+  hurtSprite: {fileID: 21300000, guid: 561d495c36a3ebd418c1beda5b30343f, type: 3}
 --- !u!61 &-8099717634817513889
 BoxCollider2D:
   m_ObjectHideFlags: 0

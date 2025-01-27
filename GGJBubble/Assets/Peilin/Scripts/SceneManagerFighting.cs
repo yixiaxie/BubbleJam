@@ -1,57 +1,58 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneManagerFighting : MonoBehaviour
 {
-    // Public fields
-    public string lowHealthScene = "Ending";  // Scene for low health
-    public string gameOverScene = "Ending 2";   // Scene for game over
-    public string healthyScene = "Ending Even";     // Scene for healthy condition
-    public GameManager gameManager;             // Reference to GameManager
-    public Character player1;                   // Reference to player1
-    public Character player2;                   // Reference to player2
+    // 公有字段
+    public string player1Win = "Ending";    // 玩家1胜利场景
+    public string player2Win = "Ending 2"; // 玩家2胜利场景
+    public string even = "Ending Even";    // 平局场景
+    public GameManager gameManager;        // GameManager引用
+    public Character player1;              // 玩家1引用
+    public Character player2;              // 玩家2引用
 
     void Update()
     {
-        // Ensure the player1 object is assigned
-        if (player1 == null)
+        // 检查是否有引用为空
+        if (gameManager == null || player1 == null || player2 == null)
         {
-            Debug.LogError("Player1 is not assigned to SceneManagerFighting!");
+            Debug.LogError("SceneManagerFighting: 缺少必要的引用！请确保 GameManager、Player1 和 Player2 已赋值。");
             return;
         }
 
-        HandleSceneTransition();
-    }
+        // 判断游戏是否结束
+        if (gameManager.isGameEnd)
+        {
+            HandleGameEnd();
+        }
 
-    private void HandleSceneTransition()
-    {
-        if (player1.hp <= 0)
+        // 判断玩家是否死亡
+        if (player1.isDied)
         {
-            // Player1 has no health left, load GameOver scene
-            LoadScene(gameOverScene);
+            SceneManager.LoadScene(player2Win); // 玩家2胜利
         }
-        else if (player1.hp > 0 && player1.hp <= 30)
+        else if (player2.isDied)
         {
-            // Player1 is in low health range, load LowHealth scene
-            LoadScene(lowHealthScene);
-        }
-        else if (player1.hp > 30)
-        {
-            // Player1 is healthy, load Healthy scene
-            LoadScene(healthyScene);
+            SceneManager.LoadScene(player1Win); // 玩家1胜利
         }
     }
 
-    private void LoadScene(string sceneName)
+    private void HandleGameEnd()
     {
-        // Only load the scene if it�s not already active
-        if (SceneManager.GetActiveScene().name != sceneName)
+        // 判断玩家血量
+        if (player1.hp > player2.hp)
         {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(player1Win); // 玩家1胜利
+        }
+        else if (player1.hp < player2.hp)
+        {
+            SceneManager.LoadScene(player2Win); // 玩家2胜利
+        }
+        else
+        {
+            SceneManager.LoadScene(even); // 平局
         }
     }
 }
-
