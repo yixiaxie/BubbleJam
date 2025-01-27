@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         {
             timerText.text = "Time's up!";  // Display message when time is up
         }
-
+        Debug.Log("Game Over! Time's up!");
     }
 
     public float GetTimeRemaining()
