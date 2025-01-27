@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
     private bool isGarlicedCoroutineRunning = false;
 
 
+
     public GameObject garlic;
 
 
@@ -111,14 +112,13 @@ public class Character : MonoBehaviour
 
 
 
+
         isDied = true;
 
         hp = 0;
        
 
 
-
-        Destroy(gameObject); // 删除角色
 
     }
 
